@@ -1,0 +1,363 @@
+.hero {
+  position: relative;
+  min-height: min(72dvh, 640px);
+  display: flex;
+  align-items: flex-end;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: min(68dvh, 560px);
+  }
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  transition:
+    opacity 1s ease,
+    transform 9s ease;
+}
+
+.bg[data-active='true'] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(48, 53, 93, 0.82) 0%,
+    rgba(48, 53, 93, 0.45) 45%,
+    rgba(14, 176, 238, 0.25) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+  padding: 2.25rem 1rem 5.5rem;
+  padding-bottom: max(5.5rem, calc(1.25rem + env(safe-area-inset-bottom, 0)));
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 4rem 1.25rem 5rem;
+    padding-bottom: 5rem;
+    max-width: min(var(--max-width), 92%);
+  }
+}
+
+.copy {
+  will-change: opacity, transform;
+}
+
+.copyAnimate {
+  animation: heroCopyIn 0.58s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kicker {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8125rem;
+  margin: 0 0 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.65rem, 7vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  max-width: none;
+  color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .title {
+    max-width: 14ch;
+    font-size: clamp(2rem, 6vw, 3.35rem);
+    line-height: 1.05;
+  }
+}
+
+.subtitle {
+  font-size: clamp(0.9375rem, 3.5vw, 1.125rem);
+  line-height: 1.55;
+  max-width: 36rem;
+  margin: 0 0 1.75rem;
+  color: var(--color-hero-subtitle);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    max-width: 38ch;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 479px) {
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.35rem;
+  background: var(--color-accent);
+  color: var(--color-white) !important;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 20px rgba(14, 176, 238, 0.35);
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.22s ease;
+}
+
+.btnPrimary:hover {
+  background: var(--color-white);
+  color: var(--color-navy) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.28);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.35rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--color-white) !important;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.btnGhost:hover {
+  border-color: var(--color-white);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.btnGhost:active {
+  transform: translateY(0);
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.progressBar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-accent), #7ddfff);
+  animation-name: heroProgress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.progressBar[data-paused='true'] {
+  animation-play-state: paused;
+}
+
+@keyframes heroProgress {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.controls {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .controls {
+    padding: 0 1rem;
+  }
+}
+
+.arrow {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(48, 53, 93, 0.45);
+  color: var(--color-white);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  backdrop-filter: blur(6px);
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 1.6rem;
+    padding-bottom: 3px;
+  }
+}
+
+.arrow:hover {
+  background: rgba(14, 176, 238, 0.65);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.06);
+}
+
+.arrow:active {
+  transform: scale(0.98);
+}
+
+.dots {
+  position: absolute;
+  bottom: max(1rem, env(safe-area-inset-bottom, 0));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 2rem);
+}
+
+@media (min-width: 768px) {
+  .dots {
+    bottom: 1.25rem;
+  }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  padding: 0;
+  transition:
+    background 0.2s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease;
+}
+
+.dot[data-active='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  border-color: var(--color-white);
+  transform: scale(1.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg {
+    transition: opacity 0.4s ease;
+    transform: none !important;
+  }
+
+  .copyAnimate {
+    animation: none;
+  }
+
+  .btnPrimary:hover,
+  .btnGhost:hover {
+    transform: none;
+  }
+
+  .arrow:hover {
+    transform: none;
+  }
+}
