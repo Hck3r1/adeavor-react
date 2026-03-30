@@ -8,9 +8,39 @@ export function Header() {
 
   return (
     <header className={styles.root}>
-      <div className={styles.topBar}>
-        <div className={styles.topInner}>
-          <Link to="/" className={styles.logoLink} onClick={() => setOpen(false)}>
+      <div className={styles.topStrip}>
+        <div className={styles.topStripInner}>
+          <p className={styles.address}>
+            <i className={`fa-solid fa-location-dot ${styles.topIcon}`} aria-hidden />
+            <span>
+              {CONTACT.addressLines.slice(0, 2).join(', ')}
+              {', '}
+              {CONTACT.addressLines[2]}
+            </span>
+          </p>
+          <div className={styles.topRight}>
+            <a href={CONTACT.phoneHref} className={styles.topPhone}>
+              <i className="fa-solid fa-phone" aria-hidden />
+              <span>{CONTACT.phoneDisplay}</span>
+            </a>
+            <Link
+              to="/contact"
+              className={styles.topCta}
+              onClick={() => setOpen(false)}
+            >
+              Request a call back
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.navBar}>
+        <div className={styles.navInner}>
+          <Link
+            to="/"
+            className={styles.logoLink}
+            onClick={() => setOpen(false)}
+          >
             <img
               src={ASSETS.logo}
               alt="Adeavor"
@@ -19,38 +49,36 @@ export function Header() {
             />
           </Link>
 
-          <div className={styles.contactCluster}>
-            <div className={styles.contactBlock}>
-              <span className={styles.icon} aria-hidden>
-                ◉
-              </span>
-              <div>
-                <p className={styles.contactLabel}>Office</p>
-                <p className={styles.contactText}>
-                  {CONTACT.addressLines.map((line) => (
-                    <span key={line}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
-                </p>
-              </div>
-            </div>
-            <div className={styles.contactBlock}>
-              <span className={styles.icon} aria-hidden>
-                ☎
-              </span>
-              <div>
-                <p className={styles.contactLabel}>Have a question</p>
-                <a href={CONTACT.phoneHref} className={styles.phone}>
-                  {CONTACT.phoneDisplay}
-                </a>
-              </div>
-            </div>
-            <Link to="/contact" className={styles.cta} onClick={() => setOpen(false)}>
-              Request a call back
-            </Link>
-          </div>
+          <nav
+            id="site-nav"
+            className={`${styles.nav} ${open ? styles.navOpen : ''}`}
+            aria-label="Primary"
+          >
+            <ul className={styles.navList}>
+              {NAV.map(({ to, label }) => (
+                <li key={to}>
+                  <NavLink
+                    to={to}
+                    end={to === '/'}
+                    className={({ isActive }) =>
+                      `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
+                    }
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <Link
+            to="/contact"
+            className={styles.navCta}
+            onClick={() => setOpen(false)}
+          >
+            Get a consultation
+          </Link>
 
           <button
             type="button"
@@ -62,32 +90,12 @@ export function Header() {
             <span className="visually-hidden">
               {open ? 'Close menu' : 'Open menu'}
             </span>
-            <span className={styles.menuIcon} data-open={open} />
+            <i
+              className={`fa-solid ${open ? 'fa-xmark' : 'fa-bars'}`}
+              aria-hidden
+            />
           </button>
         </div>
-
-        <nav
-          id="site-nav"
-          className={`${styles.nav} ${open ? styles.navOpen : ''}`}
-          aria-label="Primary"
-        >
-          <ul className={styles.navList}>
-            {NAV.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
-                  }
-                  onClick={() => setOpen(false)}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
     </header>
   )

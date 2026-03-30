@@ -1,7 +1,6 @@
 .wrap {
-  background: var(--color-white);
-  border-bottom: 3px solid var(--color-accent);
-  box-shadow: var(--shadow-card);
+  background: var(--deep);
+  border-bottom: 1px solid var(--border);
   animation: pageHeaderIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -44,14 +43,18 @@
 }
 
 .title {
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 300;
   margin: 0;
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .subtitle {
   margin: 0.75rem 0 0;
   font-size: 1.05rem;
-  color: var(--color-muted);
+  color: var(--muted);
   max-width: 52ch;
+  line-height: 1.6;
 }

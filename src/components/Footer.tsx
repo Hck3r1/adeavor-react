@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
-import { CONTACT, NAV } from '../constants'
+import { ASSETS, CONTACT, NAV } from '../constants'
 import styles from './Footer.module.css'
 
 const social = [
-  { href: 'https://twitter.com/', label: 'Twitter' },
-  { href: 'https://facebook.com/', label: 'Facebook' },
-  { href: 'https://www.linkedin.com/', label: 'LinkedIn' },
-]
+  { href: 'https://twitter.com/', label: 'Twitter', icon: 'fa-brands fa-x-twitter' },
+  { href: 'https://facebook.com/', label: 'Facebook', icon: 'fa-brands fa-facebook-f' },
+  {
+    href: 'https://www.linkedin.com/',
+    label: 'LinkedIn',
+    icon: 'fa-brands fa-linkedin-in',
+  },
+] as const
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -16,10 +20,20 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div>
+            <Link to="/" className={styles.brandLink}>
+              <img
+                src={ASSETS.logo}
+                alt="Adeavor"
+                className={styles.brandLogo}
+                decoding="async"
+              />
+            </Link>
             <p className={styles.tagline}>
-              Adeavor is a leading engineering and technology solutions company.
+              Engineering and technology solutions with operational excellence
+              through People, Process, and Performance since 2011.
             </p>
             <p className={styles.small}>
+              <i className="fa-solid fa-location-dot" aria-hidden />{' '}
               {CONTACT.addressLines.join(' · ')}
             </p>
           </div>
@@ -36,9 +50,14 @@ export function Footer() {
           <div>
             <p className={styles.heading}>Contact</p>
             <p className={styles.small}>
-              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+              <a href={`mailto:${CONTACT.email}`}>
+                <i className="fa-solid fa-envelope" aria-hidden /> {CONTACT.email}
+              </a>
               <br />
-              <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
+              <a href={CONTACT.phoneHref}>
+                <i className="fa-solid fa-phone" aria-hidden />{' '}
+                {CONTACT.phoneDisplay}
+              </a>
             </p>
             <Link to="/contact" className={styles.linkBtn}>
               Get in touch
@@ -47,17 +66,26 @@ export function Footer() {
           <div>
             <p className={styles.heading}>Follow</p>
             <ul className={styles.social}>
-              {social.map(({ href, label }) => (
+              {social.map(({ href, label, icon }) => (
                 <li key={label}>
-                  <a href={href} target="_blank" rel="noopener noreferrer">
-                    {label}
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={styles.socialLink}
+                  >
+                    <i className={icon} aria-hidden />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <p className={styles.copy}>Adeavor © {year}</p>
+        <p className={styles.copy}>
+          Adeavor © {year}. Oil &amp; Gas consultancy · Engineering &amp;
+          technology solutions
+        </p>
       </div>
     </footer>
   )

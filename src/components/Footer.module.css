@@ -1,9 +1,10 @@
 .footer {
-  background: var(--color-navy);
-  color: rgba(255, 255, 255, 0.75);
+  background: var(--deep);
+  color: var(--muted);
   margin-top: auto;
   padding: 2.25rem 1rem 1.75rem;
   padding-bottom: max(5.5rem, calc(1.75rem + env(safe-area-inset-bottom, 0)));
+  border-top: 1px solid var(--border);
 }
 
 @media (min-width: 768px) {
@@ -43,6 +44,27 @@
   }
 }
 
+.brandLink {
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 0.85rem;
+}
+
+.brandLogo {
+  display: block;
+  height: auto;
+  max-height: 48px;
+  max-width: min(200px, 100%);
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  transition: opacity 0.2s ease;
+}
+
+.brandLink:hover .brandLogo {
+  opacity: 0.88;
+}
+
 .sitemap {
   min-width: 0;
 }
@@ -64,7 +86,7 @@
 }
 
 .siteList a {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
   font-size: 0.9rem;
   display: inline-flex;
   padding: 0.2rem 0;
@@ -74,25 +96,25 @@
 }
 
 .siteList a:hover {
-  color: var(--color-accent);
+  color: var(--gold-light);
   transform: translateX(3px);
 }
 
 .tagline {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--color-white);
-  font-size: 1.05rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted);
   margin-bottom: 0.75rem;
 }
 
 .heading {
   margin: 0 0 0.5rem;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent);
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
 }
 
 .small {
@@ -104,22 +126,25 @@
 }
 
 .small a {
-  color: var(--color-white);
+  color: var(--text);
 }
 
 .small a:hover {
-  color: var(--color-accent);
+  color: var(--gold-light);
 }
 
 .linkBtn {
   display: inline-block;
   margin-top: 0.25rem;
-  padding: 0.45rem 1rem;
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent) !important;
-  border-radius: 999px;
-  font-size: 0.875rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--gold);
+  color: var(--gold-light) !important;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
   font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   transition:
     transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.2s ease,
@@ -127,8 +152,8 @@
 }
 
 .linkBtn:hover {
-  background: var(--color-accent);
-  color: var(--color-navy) !important;
+  background: var(--gold);
+  color: var(--midnight) !important;
   transform: translateY(-2px);
 }
 
@@ -138,26 +163,35 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.65rem;
 }
 
-.social a {
-  color: rgba(255, 255, 255, 0.85);
+.socialLink {
   display: inline-flex;
-  padding: 0.2rem 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  color: var(--muted) !important;
+  font-size: 1rem;
   transition:
     color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
     transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.social a:hover {
-  color: var(--color-accent);
+.socialLink:hover {
+  color: var(--gold-light) !important;
+  border-color: var(--gold);
+  background: var(--gold-pale);
   transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .linkBtn:hover,
-  .social a:hover,
+  .socialLink:hover,
   .siteList a:hover {
     transform: none;
   }
@@ -166,8 +200,10 @@
 .copy {
   margin: 2.5rem 0 0;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.8125rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
   text-align: center;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--dim);
 }

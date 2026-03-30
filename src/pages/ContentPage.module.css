@@ -4,6 +4,7 @@
   padding: 2rem 1rem 3rem;
   width: 100%;
   min-width: 0;
+  color: var(--muted);
 }
 
 @media (min-width: 480px) {
@@ -24,8 +25,8 @@
 
 .lead {
   font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-navy);
+  font-weight: 500;
+  color: var(--text);
   line-height: 1.55;
 }
 
@@ -44,7 +45,8 @@
 }
 
 .photo {
-  border-radius: var(--radius);
+  border-radius: 0;
+  border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
   width: 100%;
   transition:
@@ -54,7 +56,7 @@
 
 .photo:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 48px rgba(48, 53, 93, 0.14);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -77,23 +79,26 @@
 }
 
 .pillars > div {
-  background: var(--color-white);
+  background: var(--surface);
   padding: 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
+  border-radius: 0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
 }
 
 .pillars h2 {
-  font-size: 1.1rem;
-  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-light);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
 }
 
 .subsection {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(48, 53, 93, 0.12);
+  border-top: 1px solid var(--border);
 }
 
 .article > .subsection:first-of-type {
@@ -103,18 +108,24 @@
 }
 
 .subsection h2 {
-  font-size: 1.35rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  font-weight: 300;
+  color: var(--text);
 }
 
 .clientsSection {
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(48, 53, 93, 0.12);
+  border-top: 1px solid var(--border);
 }
 
 .clientsHeading {
-  font-size: clamp(1.2rem, 3.5vw, 1.35rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 3.5vw, 1.45rem);
+  font-weight: 300;
   margin-bottom: 0.5rem;
+  color: var(--text);
 }
 
 .clientsIntro {
@@ -155,18 +166,19 @@
   justify-content: center;
   min-height: 4.5rem;
   padding: 0.85rem 0.65rem;
-  background: var(--color-white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  border: 1px solid rgba(48, 53, 93, 0.06);
+  background: var(--surface);
+  border-radius: 0;
+  border: 1px solid var(--border);
   transition:
     transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .clientLogoFrame:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(48, 53, 93, 0.1);
+  border-color: rgba(200, 151, 58, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
 .clientLogoFrame img {
@@ -175,6 +187,7 @@
   width: auto;
   height: auto;
   object-fit: contain;
+  opacity: 0.92;
 }
 
 @media (min-width: 768px) {

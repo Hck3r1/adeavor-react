@@ -8,7 +8,7 @@ export function Layout() {
   return (
     <div className={styles.shell}>
       <Header />
-      <main style={{ flex: 1, minWidth: 0 }} id="main">
+      <main className={styles.main} id="main">
         <Outlet />
       </main>
       <Footer />

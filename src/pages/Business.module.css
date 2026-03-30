@@ -34,19 +34,20 @@
 .toc {
   position: sticky;
   top: calc(var(--header-height) + 1rem);
-  background: var(--color-white);
-  border-radius: var(--radius);
+  background: var(--surface);
+  border-radius: 0;
   padding: 1.25rem;
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
 }
 
 .tocTitle {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-accent);
+  color: var(--gold-light);
 }
 
 .toc ul {
@@ -64,10 +65,10 @@
   border: none;
   background: transparent;
   padding: 0.5rem 0.65rem;
-  border-radius: 8px;
+  border-radius: 0;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--color-muted);
+  color: var(--muted);
   transition:
     background 0.2s ease,
     color 0.2s ease,
@@ -75,23 +76,23 @@
 }
 
 .tocBtn:hover {
-  background: var(--color-bg);
-  color: var(--color-navy);
+  background: var(--deep);
+  color: var(--text);
   transform: translateX(3px);
 }
 
 .tocBtn[data-active='true'] {
-  background: rgba(14, 176, 238, 0.12);
-  color: var(--color-navy);
+  background: var(--gold-pale);
+  color: var(--text);
   font-weight: 600;
-  box-shadow: inset 3px 0 0 var(--color-accent);
+  box-shadow: inset 3px 0 0 var(--gold);
 }
 
 .panel {
-  background: var(--color-white);
-  border-radius: var(--radius);
+  background: var(--surface);
+  border-radius: 0;
   padding: 2rem 1.75rem;
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
   animation: businessPanel 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -118,16 +119,24 @@
 }
 
 .panel h2 {
+  font-family: var(--font-heading);
   font-size: 1.35rem;
+  font-weight: 300;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--color-bg);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.panel p,
+.panel li {
+  color: var(--muted);
 }
 
 .bullets {
   margin: 1.25rem 0 0;
   padding-left: 1.25rem;
-  color: var(--color-navy);
+  color: var(--muted);
 }
 
 .bullets li {
@@ -147,18 +156,21 @@
 }
 
 .details {
-  background: var(--color-white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
+  background: var(--surface);
+  border-radius: 0;
+  border: 1px solid var(--border);
   overflow: hidden;
 }
 
 .details summary {
   cursor: pointer;
   padding: 1rem 1.25rem;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-navy);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
   list-style: none;
   display: flex;
   align-items: center;
@@ -171,7 +183,7 @@
 
 .details summary::after {
   content: '+';
-  color: var(--color-accent);
+  color: var(--gold);
   font-size: 1.25rem;
 }
 
@@ -181,4 +193,5 @@
 
 .details > div {
   padding: 0 1.25rem 1.25rem;
+  color: var(--muted);
 }

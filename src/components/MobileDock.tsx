@@ -6,7 +6,7 @@ export function MobileDock() {
   return (
     <nav className={styles.dock} aria-label="Quick site navigation">
       <div className={styles.track}>
-        {MOBILE_DOCK_NAV.map(({ to, label }) => (
+        {MOBILE_DOCK_NAV.map(({ to, label, icon }) => (
           <NavLink
             key={to}
             to={to}
@@ -15,7 +15,7 @@ export function MobileDock() {
               `${styles.link} ${isActive ? styles.active : ''}`
             }
           >
-            <span className={styles.dot} aria-hidden />
+            <i className={`${icon} ${styles.icon}`} aria-hidden />
             <span>{label}</span>
           </NavLink>
         ))}

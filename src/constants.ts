@@ -1,115 +1,136 @@
-/** Primary logo — bundled in /public for full fidelity (remote mirror: ../adeavor.com/). */
 export const ASSETS = {
   logo: '/logo.png',
   aboutPhoto:
-    'https://adeavor.com/wp-content/uploads/2020/10/pexels-ylanite-koppens-796602-870x580.jpg',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
 } as const
 
+export const NAV = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Business Platforms', to: '/business' },
+  { label: 'Stewardship', to: '/stewardship' },
+  { label: 'Contact Us', to: '/contact' },
+  { label: 'Careers', to: '/careers' },
+] as const
+
+export const MOBILE_DOCK_NAV = [
+  { label: 'Home', to: '/', icon: 'fa-solid fa-house' },
+  { label: 'About', to: '/about', icon: 'fa-solid fa-circle-info' },
+  { label: 'Platforms', to: '/business', icon: 'fa-solid fa-layer-group' },
+  { label: 'Stewardship', to: '/stewardship', icon: 'fa-solid fa-leaf' },
+  { label: 'Contact', to: '/contact', icon: 'fa-solid fa-envelope' },
+] as const
+
+/** Full-bleed hero carousel (remote images; dark scrim applied in CSS). */
 export const HERO_SLIDES = [
   {
-    kicker: 'We guarantee',
-    title: 'Operational Excellence',
-    subtitle: 'through our proven framework',
     image:
-      'https://adeavor.com/wp-content/uploads/2020/10/pexels-brotin-biswas-518543.jpg',
-  },
-  {
-    kicker: 'Providing for today',
-    title: 'Engineering and technology solutions',
-    subtitle: 'Dependable delivery for complex energy and industrial projects.',
-    image: 'https://adeavor.com/wp-content/uploads/2020/10/Tech-HS.jpg',
-  },
-  {
-    kicker: 'We provide',
-    title: 'Dependable solutions',
+      'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1920&q=80',
+    kicker: 'Oil & Gas Consultancy — Est. 2011',
+    title: 'Operational excellence, redefined',
     subtitle:
-      'To meet the growing worldwide demand for energy while preparing for the future.',
+      'Engineering and technology solutions for dependable energy outcomes worldwide.',
+  },
+  {
     image:
-      'https://adeavor.com/wp-content/uploads/2020/10/pexels-chris-f-3714195.jpg',
+      'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80',
+    kicker: 'People · Process · Performance',
+    title: 'A framework you can trust',
+    subtitle:
+      'Structured delivery that eliminates errors, drives efficiency, and keeps compliance front and center.',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
+    kicker: 'Nigeria & United States',
+    title: 'Global partnerships, local depth',
+    subtitle:
+      'Market knowledge and skilled teams supporting diverse clients across regions.',
   },
 ] as const
 
-export const NAV = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About Us' },
-  { to: '/business', label: 'Business Platforms' },
-  { to: '/stewardship', label: 'Stewardship' },
-  { to: '/contact', label: 'Contact Us' },
-  { to: '/careers', label: 'Careers' },
-] as const
-
-/** Short labels for the fixed mobile dock (max-width 899px). */
-export const MOBILE_DOCK_NAV = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/business', label: 'Platforms' },
-  { to: '/stewardship', label: 'Steward' },
-  { to: '/contact', label: 'Contact' },
-  { to: '/careers', label: 'Careers' },
+/** Three pillars strip (home). */
+export const HOME_PILLARS = [
+  {
+    title: 'People',
+    body:
+      'Best-in-class professionals committed to your success.',
+    icon: 'fa-solid fa-users',
+  },
+  {
+    title: 'Process',
+    body:
+      'Proven frameworks that eliminate errors and inefficiency.',
+    icon: 'fa-solid fa-gears',
+  },
+  {
+    title: 'Performance',
+    body:
+      'Measurable outcomes and full regulatory compliance.',
+    icon: 'fa-solid fa-chart-line',
+  },
 ] as const
 
 export const HOME_KEY_FACTS = [
-  { value: '2011', label: 'Founded' },
-  { value: 'Nigeria · USA', label: 'Office footprint' },
-  { value: '5', label: 'Business platforms' },
-  { value: 'PPP', label: 'People · Process · Performance' },
+  { value: '14+', label: 'Years Active' },
+  { value: '2', label: 'Global Offices' },
+  { value: '100%', label: 'Client Focus' },
 ] as const
 
 export const HOME_HUB_LINKS = [
   {
+    title: 'About Adeavor',
+    blurb:
+      'Our vision, mission, and the values that drive every engagement.',
     to: '/about',
-    title: 'About us',
-    blurb: 'Our story, vision, leadership, and organizations we work with.',
+    icon: 'fa-solid fa-building-columns',
   },
   {
+    title: 'Business Platforms',
+    blurb:
+      'Engineering, technology, and consulting across critical sectors.',
     to: '/business',
-    title: 'Business platforms',
-    blurb: 'Digital solutions, EPCCM, O&M, Academy, and Investment.',
+    icon: 'fa-solid fa-diagram-project',
   },
   {
-    to: '/stewardship',
     title: 'Stewardship',
-    blurb: 'Health & safety, quality assurance, and sustainability.',
+    blurb: 'HSE, quality, and social responsibility embedded in how we work.',
+    to: '/stewardship',
+    icon: 'fa-solid fa-shield-halved',
   },
   {
-    to: '/careers',
-    title: 'Careers',
-    blurb: 'Join our team and explore strategic partnerships.',
-  },
-  {
+    title: 'Contact & Careers',
+    blurb: 'Reach our team or explore opportunities to join Adeavor.',
     to: '/contact',
-    title: 'Contact',
-    blurb: 'Lagos office, phone, email, and how to reach consultants.',
+    icon: 'fa-solid fa-briefcase',
   },
 ] as const
 
 export const HOME_PLATFORMS_TEASER = [
-  { label: 'Digital solutions', to: '/business' },
-  { label: 'EPCCM', to: '/business' },
-  { label: 'O&M', to: '/business' },
-  { label: 'Academy', to: '/business' },
-  { label: 'Investment', to: '/business' },
+  { label: 'Engineering & technical consulting', to: '/business' },
+  { label: 'Technology & digital transformation', to: '/business' },
+  { label: 'Operational excellence advisory', to: '/business' },
+  { label: 'Regulatory compliance & assurance', to: '/business' },
 ] as const
 
-/** Sample of clients / partners featured on the original About page. */
 export const CLIENT_LOGOS = [
-  { src: '/clients/partner-3.png', alt: 'Industry partner' },
-  {
-    src: '/clients/exxonmobil-logo-e1602364031669.png',
-    alt: 'ExxonMobil',
-  },
-  { src: '/clients/partner-2.png', alt: 'Industry partner' },
-  { src: '/clients/partner-1.png', alt: 'Industry partner' },
+  { src: '/clients/partner-1.png', alt: 'Partner' },
+  { src: '/clients/partner-2.png', alt: 'Partner' },
+  { src: '/clients/partner-3.png', alt: 'Partner' },
+  { src: '/clients/exxonmobil-logo-e1602364031669.png', alt: 'ExxonMobil' },
   { src: '/clients/NNPC-Logo-e1602364488244.png', alt: 'NNPC' },
 ] as const
 
 export const CONTACT = {
-  addressLines: [
-    'Unit 1 Plot 2 Block 22 Babatunde Anjous Street',
-    'Lekki Phase 1, Lagos',
-  ],
+  email: 'info@adeavor.com',
+  talentEmail: 'careers@adeavor.com',
+  phone: '+234 812 151 5697',
   phoneDisplay: '+234 812 151 5697',
   phoneHref: 'tel:+2348121515697',
-  email: 'info@adeavor.com',
-  talentEmail: 'talent@adeavor.com',
+  addressLines: [
+    'Unit 1, Plot 2 Block 22',
+    'Babatunde Anjous Street',
+    'Lekki Phase 1, Lagos, Nigeria',
+  ],
+  offices: 'Nigeria & United States of America',
 } as const

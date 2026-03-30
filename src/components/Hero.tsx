@@ -102,7 +102,7 @@ export function Hero() {
           aria-label="Previous slide"
           onClick={() => go(-1)}
         >
-          ‹
+          <i className="fa-solid fa-chevron-left" aria-hidden />
         </button>
         <button
           type="button"
@@ -110,7 +110,7 @@ export function Hero() {
           aria-label="Next slide"
           onClick={() => go(1)}
         >
-          ›
+          <i className="fa-solid fa-chevron-right" aria-hidden />
         </button>
       </div>
 

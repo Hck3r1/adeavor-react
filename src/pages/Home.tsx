@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   HOME_HUB_LINKS,
   HOME_KEY_FACTS,
+  HOME_PILLARS,
   HOME_PLATFORMS_TEASER,
 } from '../constants'
 import { Hero } from '../components/Hero'
@@ -12,6 +13,20 @@ export function Home() {
   return (
     <>
       <Hero />
+
+      <div className={styles.pillarsBar}>
+        {HOME_PILLARS.map((p) => (
+          <div key={p.title} className={styles.pillarItem}>
+            <div className={styles.pillarIcon} aria-hidden>
+              <i className={p.icon} />
+            </div>
+            <div>
+              <div className={styles.pillarTitle}>{p.title}</div>
+              <p className={styles.pillarDesc}>{p.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <section className={styles.factsSection} aria-labelledby="facts-heading">
         <div className={styles.inner}>
@@ -49,10 +64,13 @@ export function Home() {
               <Reveal key={item.to} delayMs={60 * (i + 1)}>
                 <li>
                   <Link to={item.to} className={styles.hubCard}>
+                    <span className={styles.hubCardIcon} aria-hidden>
+                      <i className={item.icon} />
+                    </span>
                     <span className={styles.hubCardTitle}>{item.title}</span>
                     <span className={styles.hubCardBlurb}>{item.blurb}</span>
                     <span className={styles.hubCardArrow} aria-hidden>
-                      →
+                      <i className="fa-solid fa-arrow-right" />
                     </span>
                   </Link>
                 </li>
@@ -103,7 +121,8 @@ export function Home() {
                   clients worldwide.
                 </p>
                 <Link to="/about" className={styles.link}>
-                  Read our story →
+                  Read our story{' '}
+                  <i className="fa-solid fa-arrow-right" aria-hidden />
                 </Link>
               </div>
             </Reveal>
