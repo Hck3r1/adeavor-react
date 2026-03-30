@@ -41,8 +41,8 @@
   display: block;
   height: auto;
   width: auto;
-  max-height: 52px;
-  max-width: min(200px, calc(100vw - 5.5rem));
+  max-height: 68px;
+  max-width: min(280px, calc(100vw - 5rem));
   object-fit: contain;
   object-position: left center;
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
@@ -58,8 +58,8 @@
 
 @media (min-width: 900px) {
   .logo {
-    max-height: 56px;
-    max-width: min(220px, 28vw);
+    max-height: 76px;
+    max-width: min(300px, 34vw);
   }
 }
 

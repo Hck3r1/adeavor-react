@@ -38,6 +38,59 @@ export const NAV = [
   { to: '/careers', label: 'Careers' },
 ] as const
 
+/** Short labels for the fixed mobile dock (max-width 899px). */
+export const MOBILE_DOCK_NAV = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/business', label: 'Platforms' },
+  { to: '/stewardship', label: 'Steward' },
+  { to: '/contact', label: 'Contact' },
+  { to: '/careers', label: 'Careers' },
+] as const
+
+export const HOME_KEY_FACTS = [
+  { value: '2011', label: 'Founded' },
+  { value: 'Nigeria · USA', label: 'Office footprint' },
+  { value: '5', label: 'Business platforms' },
+  { value: 'PPP', label: 'People · Process · Performance' },
+] as const
+
+export const HOME_HUB_LINKS = [
+  {
+    to: '/about',
+    title: 'About us',
+    blurb: 'Our story, vision, leadership, and organizations we work with.',
+  },
+  {
+    to: '/business',
+    title: 'Business platforms',
+    blurb: 'Digital solutions, EPCCM, O&M, Academy, and Investment.',
+  },
+  {
+    to: '/stewardship',
+    title: 'Stewardship',
+    blurb: 'Health & safety, quality assurance, and sustainability.',
+  },
+  {
+    to: '/careers',
+    title: 'Careers',
+    blurb: 'Join our team and explore strategic partnerships.',
+  },
+  {
+    to: '/contact',
+    title: 'Contact',
+    blurb: 'Lagos office, phone, email, and how to reach consultants.',
+  },
+] as const
+
+export const HOME_PLATFORMS_TEASER = [
+  { label: 'Digital solutions', to: '/business' },
+  { label: 'EPCCM', to: '/business' },
+  { label: 'O&M', to: '/business' },
+  { label: 'Academy', to: '/business' },
+  { label: 'Investment', to: '/business' },
+] as const
+
 /** Sample of clients / partners featured on the original About page. */
 export const CLIENT_LOGOS = [
   { src: '/clients/partner-3.png', alt: 'Industry partner' },

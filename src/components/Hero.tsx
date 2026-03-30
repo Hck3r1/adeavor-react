@@ -1,15 +1,18 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import type { TouchEvent as ReactTouchEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { HERO_SLIDES } from '../constants'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import styles from './Hero.module.css'
 
 const INTERVAL_MS = 7000
+const SWIPE_MIN_PX = 48
 
 export function Hero() {
   const reducedMotion = usePrefersReducedMotion()
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const touchStartX = useRef<number | null>(null)
 
   useEffect(() => {
     if (paused) return
@@ -23,6 +26,20 @@ export function Hero() {
     setIndex((i) => (i + delta + HERO_SLIDES.length) % HERO_SLIDES.length)
   }, [])
 
+  function handleTouchStart(e: ReactTouchEvent<HTMLElement>) {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  function handleTouchEnd(e: ReactTouchEvent<HTMLElement>) {
+    if (touchStartX.current == null) return
+    const endX = e.changedTouches[0].clientX
+    const delta = endX - touchStartX.current
+    touchStartX.current = null
+    if (Math.abs(delta) < SWIPE_MIN_PX) return
+    if (delta > 0) go(-1)
+    else go(1)
+  }
+
   const slide = HERO_SLIDES[index]
 
   return (
@@ -31,6 +48,8 @@ export function Hero() {
       aria-roledescription="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <div className={styles.media}>
         {HERO_SLIDES.map((s, i) => (

@@ -1,4 +1,9 @@
 import { Link } from 'react-router-dom'
+import {
+  HOME_HUB_LINKS,
+  HOME_KEY_FACTS,
+  HOME_PLATFORMS_TEASER,
+} from '../constants'
 import { Hero } from '../components/Hero'
 import { Reveal } from '../components/Reveal'
 import styles from './Home.module.css'
@@ -7,6 +12,79 @@ export function Home() {
   return (
     <>
       <Hero />
+
+      <section className={styles.factsSection} aria-labelledby="facts-heading">
+        <div className={styles.inner}>
+          <Reveal>
+            <h2 id="facts-heading" className={styles.sectionTitle}>
+              At a glance
+            </h2>
+            <ul className={styles.facts}>
+              {HOME_KEY_FACTS.map((item) => (
+                <li key={item.label} className={styles.fact}>
+                  <span className={styles.factValue}>{item.value}</span>
+                  <span className={styles.factLabel}>{item.label}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section
+        className={styles.hubSection}
+        aria-labelledby="hub-heading"
+      >
+        <div className={styles.inner}>
+          <Reveal>
+            <h2 id="hub-heading" className={styles.sectionTitle}>
+              Explore Adeavor
+            </h2>
+            <p className={styles.hubLead}>
+              Jump straight to the section you need—each area opens in one tap.
+            </p>
+          </Reveal>
+          <ul className={styles.hubGrid}>
+            {HOME_HUB_LINKS.map((item, i) => (
+              <Reveal key={item.to} delayMs={60 * (i + 1)}>
+                <li>
+                  <Link to={item.to} className={styles.hubCard}>
+                    <span className={styles.hubCardTitle}>{item.title}</span>
+                    <span className={styles.hubCardBlurb}>{item.blurb}</span>
+                    <span className={styles.hubCardArrow} aria-hidden>
+                      →
+                    </span>
+                  </Link>
+                </li>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className={styles.platformsBand}>
+        <div className={styles.inner}>
+          <Reveal>
+            <h2
+              className={`${styles.sectionTitle} ${styles.sectionTitleOnDark}`}
+            >
+              What we deliver
+            </h2>
+            <p className={styles.platformsIntro}>
+              Five integrated platforms—tap any to read more on Business
+              Platforms.
+            </p>
+            <div className={styles.platformPills}>
+              {HOME_PLATFORMS_TEASER.map((p) => (
+                <Link key={p.label} to={p.to} className={styles.platformPill}>
+                  {p.label}
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className={styles.section}>
         <div className={styles.inner}>
           <div className={styles.introGrid}>

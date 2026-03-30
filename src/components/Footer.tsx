@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CONTACT } from '../constants'
+import { CONTACT, NAV } from '../constants'
 import styles from './Footer.module.css'
 
 const social = [
@@ -23,6 +23,16 @@ export function Footer() {
               {CONTACT.addressLines.join(' · ')}
             </p>
           </div>
+          <nav className={styles.sitemap} aria-label="Site pages">
+            <p className={styles.heading}>Site</p>
+            <ul className={styles.siteList}>
+              {NAV.map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <div>
             <p className={styles.heading}>Contact</p>
             <p className={styles.small}>

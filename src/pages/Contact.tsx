@@ -30,10 +30,10 @@ export function Contact() {
         <div className={styles.inner}>
           <div className={styles.card}>
             <h2 className={styles.h2}>Send a message</h2>
-            <p className={styles.hint}>
-              This form is a UI placeholder—wire it to your API or form service
+            {/* <p className={styles.hint}> */}
+              {/* This form is a UI placeholder—wire it to your API or form service
               when you are ready.
-            </p>
+            </p> */}
             {sent ? (
               <p className={styles.success} role="status">
                 Thanks—your message has been recorded for this demo. Use{' '}
