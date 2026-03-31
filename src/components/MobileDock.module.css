@@ -48,7 +48,7 @@
     padding: 0.35rem 0.25rem;
     border-radius: 10px;
     color: var(--muted) !important;
-    font-size: 0.625rem;
+    font-size: 0.78rem;
     font-weight: 600;
     font-family: var(--font-display);
     text-transform: uppercase;
@@ -63,7 +63,7 @@
   }
 
   .icon {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     opacity: 0.9;
   }
 

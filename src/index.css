@@ -11,9 +11,9 @@
   --teal: #1e8a7a;
   --teal-light: #27b09c;
   --teal-pale: rgba(30, 138, 122, 0.12);
-  --text: #e8eaf0;
-  --muted: #8a95a8;
-  --dim: #4a5568;
+  --text: #f1f4fa;
+  --muted: #b8c2d3;
+  --dim: #8a96ab;
 
   /* Bridge for existing modules */
   --color-navy: var(--text);
@@ -22,7 +22,7 @@
   --color-muted: var(--muted);
   --color-white: #ffffff;
   --color-hero-subtitle: rgba(200, 151, 58, 0.92);
-  --font-display: 'Barlow Condensed', system-ui, sans-serif;
+  --font-display: 'Barlow', system-ui, sans-serif;
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Barlow', system-ui, sans-serif;
   --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.35);
@@ -46,9 +46,9 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.65;
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.75;
   color: var(--muted);
   background: var(--midnight);
   -webkit-font-smoothing: antialiased;
@@ -98,8 +98,8 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: var(--text);
-  font-weight: 300;
-  line-height: 1.15;
+  font-weight: 400;
+  line-height: 1.2;
   margin: 0 0 0.75rem;
 }
 
