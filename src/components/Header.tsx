@@ -19,9 +19,9 @@ export function Header() {
             </span>
           </p>
           <div className={styles.topRight}>
-            <a href={CONTACT.phoneHref} className={styles.topPhone}>
-              <i className="fa-solid fa-phone" aria-hidden />
-              <span>{CONTACT.phoneDisplay}</span>
+            <a href={`mailto:${CONTACT.email}`} className={styles.topPhone}>
+              <i className="fa-solid fa-envelope" aria-hidden />
+              <span>{CONTACT.email}</span>
             </a>
             <Link
               to="/contact"

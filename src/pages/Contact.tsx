@@ -5,7 +5,7 @@ import { PageHeader } from '../components/PageHeader'
 import styles from './Contact.module.css'
 
 const STEPS = [
-  { title: 'A phone call from one of', detail: 'Our consultants' },
+  { title: 'A call from one of', detail: 'Our consultants' },
   { title: 'Evaluation of', detail: 'Your project cost' },
   { title: 'An in-person meeting to', detail: 'Discuss the details' },
   { title: 'Details are protected,', detail: 'Privacy guaranteed' },
@@ -23,7 +23,7 @@ export function Contact() {
     <>
       <PageHeader
         title="Contact Us"
-        subtitle="Reach our team in Lagos or connect by email."
+        subtitle="Reach our team in Lagos, Abuja, or connect by email."
       />
 
       <div className={styles.grid}>
@@ -56,10 +56,6 @@ export function Contact() {
                   />
                 </label>
                 <label className={styles.field}>
-                  <span>Phone</span>
-                  <input name="phone" type="tel" autoComplete="tel" />
-                </label>
-                <label className={styles.field}>
                   <span>Message</span>
                   <textarea name="message" rows={4} required />
                 </label>
@@ -82,11 +78,6 @@ export function Contact() {
                     <br />
                   </span>
                 ))}
-              </li>
-              <li>
-                <strong>Phone</strong>
-                <br />
-                <a href={CONTACT.phoneHref}>{CONTACT.phoneDisplay}</a>
               </li>
               <li>
                 <strong>Email</strong>

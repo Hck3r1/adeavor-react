@@ -112,16 +112,16 @@
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--gold);
-  background: var(--panel);
-  box-shadow: 0 0 0 1px rgba(200, 151, 58, 0.2);
+  border-color: var(--brand-blue);
+  background: var(--surface);
+  box-shadow: 0 0 0 2px rgba(5, 161, 238, 0.2);
 }
 
 .submit {
   align-self: flex-start;
   border: none;
-  background: var(--gold);
-  color: var(--midnight);
+  background: var(--brand-blue);
+  color: var(--on-brand);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1rem;
@@ -137,7 +137,7 @@
 }
 
 .submit:hover {
-  background: var(--gold-light);
+  background: var(--brand-blue-mid);
   transform: translateY(-2px);
 }
 
@@ -177,7 +177,7 @@
 }
 
 .infoList a {
-  color: var(--gold-light);
+  color: var(--brand-blue);
 }
 
 .infoList a:hover {
@@ -195,7 +195,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--gold-light);
+  color: var(--brand-green-mid);
   margin: 0 0 0.75rem;
 }
 

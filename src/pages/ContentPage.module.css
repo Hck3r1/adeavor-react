@@ -56,7 +56,7 @@
 
 .photo:hover {
   transform: scale(1.02);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(15, 23, 41, 0.12);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -83,14 +83,14 @@
   padding: 1.5rem;
   border-radius: 0;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--brand-blue);
 }
 
 .pillars h2 {
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--gold-light);
+  color: var(--brand-green-mid);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -177,8 +177,8 @@
 
 .clientLogoFrame:hover {
   transform: translateY(-2px);
-  border-color: rgba(200, 151, 58, 0.35);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border-color: rgba(5, 161, 238, 0.25);
+  box-shadow: var(--shadow-card);
 }
 
 .clientLogoFrame img {

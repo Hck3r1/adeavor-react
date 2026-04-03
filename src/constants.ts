@@ -1,5 +1,5 @@
 export const ASSETS = {
-  logo: '/logo.png',
+  logo: '/Adeavor-hero.svg',
   aboutPhoto:
     'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
 } as const
@@ -21,9 +21,10 @@ export const MOBILE_DOCK_NAV = [
   { label: 'Contact', to: '/contact', icon: 'fa-solid fa-envelope' },
 ] as const
 
-/** Full-bleed hero carousel (remote images; dark scrim applied in CSS). */
+/** Full-bleed hero carousel (remote images; header uses Adeavor-hero.svg). */
 export const HERO_SLIDES = [
   {
+    id: 'slide-1',
     image:
       'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1920&q=80',
     kicker: 'Oil & Gas Consultancy — Est. 2011',
@@ -32,6 +33,7 @@ export const HERO_SLIDES = [
       'Engineering and technology solutions for dependable energy outcomes worldwide.',
   },
   {
+    id: 'slide-2',
     image:
       'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1920&q=80',
     kicker: 'People · Process · Performance',
@@ -40,6 +42,7 @@ export const HERO_SLIDES = [
       'Structured delivery that eliminates errors, drives efficiency, and keeps compliance front and center.',
   },
   {
+    id: 'slide-3',
     image:
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
     kicker: 'Nigeria & United States',
@@ -128,9 +131,9 @@ export const CONTACT = {
   phoneDisplay: '+234 812 151 5697',
   phoneHref: 'tel:+2348121515697',
   addressLines: [
-    'Unit 1, Plot 2 Block 22',
-    'Babatunde Anjous Street',
-    'Lekki Phase 1, Lagos, Nigeria',
+    'Lagos',
+    'Abuja',
+    'US',
   ],
-  offices: 'Nigeria & United States of America',
+  offices: 'Lagos · Abuja · US',
 } as const

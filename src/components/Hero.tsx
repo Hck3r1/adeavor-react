@@ -54,7 +54,7 @@ export function Hero() {
       <div className={styles.media}>
         {HERO_SLIDES.map((s, i) => (
           <img
-            key={s.image}
+            key={s.id}
             src={s.image}
             alt=""
             className={styles.bg}
@@ -117,7 +117,7 @@ export function Hero() {
       <div className={styles.dots} role="tablist" aria-label="Hero slides">
         {HERO_SLIDES.map((s, i) => (
           <button
-            key={s.image}
+            key={s.id}
             type="button"
             role="tab"
             aria-selected={i === index}

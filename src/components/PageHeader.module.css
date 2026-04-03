@@ -1,6 +1,7 @@
 .wrap {
-  background: var(--deep);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 20px rgba(15, 23, 41, 0.04);
   animation: pageHeaderIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 

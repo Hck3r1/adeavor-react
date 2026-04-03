@@ -1,5 +1,5 @@
 .footer {
-  background: var(--deep);
+  background: var(--surface-alt);
   color: var(--muted);
   margin-top: auto;
   padding: 2.25rem 1rem 1.75rem;
@@ -39,7 +39,7 @@
 
 @media (min-width: 900px) {
   .grid {
-    grid-template-columns: 1.15fr 0.95fr 1fr 0.85fr;
+    grid-template-columns: 1.15fr 0.95fr 1fr;
     gap: 2rem;
   }
 }
@@ -47,14 +47,14 @@
 .brandLink {
   display: inline-block;
   line-height: 0;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.35rem;
 }
 
 .brandLogo {
   display: block;
   height: auto;
-  max-height: 48px;
-  max-width: min(200px, 100%);
+  max-height: 54px;
+  max-width: min(220px, 100%);
   width: auto;
   object-fit: contain;
   object-position: left center;
@@ -96,7 +96,7 @@
 }
 
 .siteList a:hover {
-  color: var(--gold-light);
+  color: var(--brand-blue);
   transform: translateX(3px);
 }
 
@@ -114,7 +114,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--gold-light);
+  color: var(--brand-green-mid);
 }
 
 .small {
@@ -130,15 +130,15 @@
 }
 
 .small a:hover {
-  color: var(--gold-light);
+  color: var(--brand-blue);
 }
 
 .linkBtn {
   display: inline-block;
   margin-top: 0.25rem;
   padding: 0.5rem 1.1rem;
-  border: 1px solid var(--gold);
-  color: var(--gold-light) !important;
+  border: 1px solid var(--brand-blue);
+  color: var(--brand-blue) !important;
   border-radius: 0;
   font-family: var(--font-display);
   font-size: 0.98rem;
@@ -152,46 +152,13 @@
 }
 
 .linkBtn:hover {
-  background: var(--gold);
-  color: var(--midnight) !important;
-  transform: translateY(-2px);
-}
-
-.social {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.socialLink {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--border);
-  color: var(--muted) !important;
-  font-size: 1rem;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease,
-    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.socialLink:hover {
-  color: var(--gold-light) !important;
-  border-color: var(--gold);
-  background: var(--gold-pale);
+  background: var(--brand-blue);
+  color: var(--on-brand) !important;
   transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .linkBtn:hover,
-  .socialLink:hover,
   .siteList a:hover {
     transform: none;
   }
@@ -206,4 +173,17 @@
   letter-spacing: 0.06em;
   text-align: center;
   color: var(--muted);
+}
+
+.heroWrap {
+  margin: 0 0 0.45rem;
+  max-width: 260px;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(15, 23, 41, 0.18));
 }
