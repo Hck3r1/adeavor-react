@@ -121,12 +121,12 @@ export const CLIENT_LOGOS = [
   { src: '/clients/partner-2.png', alt: 'Partner' },
   { src: '/clients/partner-3.png', alt: 'Partner' },
   { src: '/clients/exxonmobil-logo-e1602364031669.png', alt: 'ExxonMobil' },
-  { src: '/clients/NNPC-Logo-e1602364488244.png', alt: 'NNPC' },
+  { src: '/clients/nnpc-logo.svg', alt: 'NNPC' },
 ] as const
 
 export const CONTACT = {
-  email: 'info@adeavor.com',
-  talentEmail: 'careers@adeavor.com',
+  email: 'contact@adeavor.com',
+  talentEmail: 'contact@adeavor.com',
   phone: '+234 812 151 5697',
   phoneDisplay: '+234 812 151 5697',
   phoneHref: 'tel:+2348121515697',

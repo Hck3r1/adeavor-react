@@ -110,7 +110,7 @@
 .subsection h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 3vw, 1.45rem);
-  font-weight: 300;
+  font-weight: 700;
   color: var(--text);
 }
 
@@ -123,14 +123,15 @@
 .clientsHeading {
   font-family: var(--font-heading);
   font-size: clamp(1.2rem, 3.5vw, 1.45rem);
-  font-weight: 300;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--text);
 }
 
 .clientsIntro {
   margin: 0 0 1.5rem;
-  max-width: 40rem;
+  max-width: none;
+  text-wrap: pretty;
 }
 
 .clientsGrid {

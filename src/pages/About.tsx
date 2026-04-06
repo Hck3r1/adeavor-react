@@ -113,8 +113,7 @@ export function About() {
             Organizations we work with
           </h2>
           <p className={styles.clientsIntro}>
-            A selection of clients and partners we are proud to support across
-            energy and industry.
+            A selection of clients and partners we are proud to support across energy and industry.
           </p>
           <ul className={styles.clientsGrid}>
             {CLIENT_LOGOS.map(({ src, alt }) => (
